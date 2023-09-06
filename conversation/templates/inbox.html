@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{%block includings%}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'profile.css' %}">
+{%endblock%}
+{%block title%}InBox{%endblock%}
+
+
+{%block content%}
+<section class="inbox__wrapper__section">
+<div class="container">
+<h1 style="padding-left: 15px;
+padding-right: 15px;
+margin-left: 25px;
+margin-right: 25px;
+padding-top: 15px;
+padding-bottom: 15px;
+margin-top: 15px;
+margin-bottom: 15px;">Chats</h1>
+
+<div class="cardd  inboxes__games__card" >
+    {%for conversation in conversations%}
+    <a href="{%url 'conversation:detail' conversation.id%}" style="text-decoration: none;">
+    <div class="card mb-3" >
+        <div class="row g-0" style="display: flex;">
+          
+            
+          <img src="{{user.profile.ava.url}}" class="user_ava_conv" alt="">
+          
+          <div class="col-md-8">
+            <div class="card-body">
+              {%for member in conversation.members.all%}
+              {% if member != request.user%}
+               <p class=""><strong>{{member.username}}</strong> | {{conversation.modified_at}}</p>
+               <p>{{conversation.item.name}}</p>
+              {%endif%}
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    
+    {%endfor%}
+</div>
+</div>
+</section>
+{%endblock%}

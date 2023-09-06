@@ -1,0 +1,76 @@
+{%extends 'base.html'%}
+{%block includings%}
+{%load static%}
+
+
+
+
+{%endblock%}
+{%block title%}LeaderBoard{%endblock%}
+{%block content%}
+
+<div class="leaderboard-title-wrapper">
+    
+</div>
+<div class="leaderboard__title">LeaderBoard of Top Players</div>
+<div class="container">
+    
+    <div class="leaderboard__wrapper ">
+    
+   
+    
+    <table class="styled-table leaderboard__table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody class="leaderboard__tr">
+            {%for user in page_obj%}
+            <tr id="display" onclick= "window.location='{%url 'profile' user.id%}';">     
+                <td  ><a href="{%url 'profile' user.id%}" id="display_name" >{{user.nickname}}</a></td>
+
+                <td>{{user.elo}}</td>
+                
+            </tr>
+            {%endfor%}  
+            
+        </tbody>
+        
+    </table>
+
+</div>
+</div>
+
+<section name="pagination">
+    {%if page_obj.has_other_pages%}
+  <nav  aria-label="Page navigation example">
+      <ul class="pagination" style="margin-left:50%;margin-bottom: 100px;margin-top: 20px;">
+          {%if page_obj.has_previous%}
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+          {%endif%}
+          
+  
+        {%for p in paginator.page_range%}
+        {%if page_obj.number == p%}
+        <li class="page-item active">
+          <a class="page-link" href="?page={{p}}">{{p}}</a>
+      </li>
+      {%elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2%}
+      <li class="page-item">
+          <a class="page-link not__active" href="?page={{p}}">{{p}}</a>
+      </li>
+  
+        {%endif%}
+        {%endfor%}
+  
+        {%if page_obj.has_next%}
+        <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a></li>
+        {%endif%}
+        
+      </ul>
+    </nav>
+  {%endif%}
+  </section>
+{%endblock%}

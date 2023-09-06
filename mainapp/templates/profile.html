@@ -1,0 +1,181 @@
+{%extends 'base.html'%}
+{%block includings%}
+{%load static%}
+
+{%endblock%}
+{%block title%}{{user}}{%endblock%}
+{%block content%}
+
+<div class="profile__screen">
+
+    <!-- <div class="profile-usernick-top" style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url({{user.profile.ava.url}}); background-repeat: no-repeat;background-size: cover;" > 
+      
+    <div class="container" >
+    
+
+    <div class="user__info__wrapper">
+
+      <img class="img-fluid user_ava" src="{{user.profile.ava.url}}" alt="">
+      
+      <h3 class="user__info__name">{{user.profile.nickname}}</h3>
+
+    
+    
+      <h3 class="user__info__elo">{{user.profile.elo}} elo</h3>
+      
+    
+    
+      <h3 class="user__info__wordscounter">{{user.profile.counter}} words added</h3>
+      
+    
+    </div>
+    </div>
+  </div> -->
+  <div class="supercontainer">
+    
+  <div class="profile__info__wrapper">
+      <div class="info-top" style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url({{user.profile.background.url}}); background-repeat: no-repeat;background-size: cover;" >
+        {%if request.user == user%}
+        <div class="dropdown edit_cover">
+          <button class="edit_cover_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Change Cover  
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item upl_btn" href="#">Upload <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+              <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
+            </svg> </a></li>
+            <li><a class="dropdown-item" style="color: red;" href="{%url 'delete_background' user.id%}">delete</a></li>
+            
+          </ul>
+        </div>
+        {%endif%}
+      </div>
+      <div class="info-data">
+        <img class="img-fluid user_ava" src="{{user.profile.ava.url}}" alt="">
+        <div class="about-text-block">
+        <h4 class="data_username">{{user.profile.nickname}}</h4>
+        <h6 class="data_elo">{{user.profile.elo}} elo </h4>
+        <h5 class="data_counter">{{user.profile.counter}} words added</h4>
+      </div>
+      </div>
+  </div>
+  
+  <div class="popup-change-bg hidden">
+    <div class="profile_detail__title" style="margin-top: 2px;margin-bottom: 4px;">
+      <h6>Change background</h4>
+  </div>
+  <form action="{%url 'change_background' user.id%}" method="POST" class="avatar__change__form" enctype="multipart/form-data">
+      
+      {%csrf_token%}
+      <label for="images" class="drop-container" id="dropcontainer">
+          <span class="drop-title">Drop files here</span>
+          or
+          <input class="profile_detail-input ava__input" name="background_photo" id="images" accept="image/*" type="file" required>
+          <button type="submit" class="change_ava_btn">send</button>
+        </label>
+  </form>
+  <button class="close_input_btn">close</button>
+  </div>
+
+  
+</div>
+  <div class="add_follow_tables_wrapper" >
+  <div class="container supercontainer" id="card_supercontainer" >
+    {%if request.user == user%}
+    <div id="demo-modal" class="modal" role="dialog" tabindex="-1">
+        <div class="model-inner">
+          <div class="modal-header">
+            <h3>Create new Table</h3>
+            <button class="modal-close" data-id="demo-modal" aria-label="Close">
+              &times;
+            </button>
+          </div>
+          <form action="" method="POST">
+            {%csrf_token%}
+            <div class="mb-3">
+                
+                {{form.name}}
+
+              </div>
+            <button class="modal-open-add" type="submit">send</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-wrapper" >
+      <button class="modal-open" data-id="demo-modal">ADD</button>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" style="background: transparent; border: none;" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="dropdown-wrapper">
+          <li class="dropdown-dot"></li>
+          <li class="dropdown-dot"></li>
+          <li class="dropdown-dot"></li>
+        </div>
+        </a>
+      
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{% url 'setting_profile' user%}">Change Profile</a></li>
+          
+        </ul>
+      </div>
+    </div>
+      {%else%}
+      <button class="button_profile" role="button"><a href="{%url 'game:new_game' user.id%}">Play the game</a></button>
+
+      {%if count_f == 1 %}
+      <button class="button_profile" role="button"><a href="{%url 'unfollow' user.id%}">Unfollow</a></button>
+      {%else%}
+      <button class="button_profile" role="button"><a href="{%url 'follow' user.id%}">Follow</a></button>
+      {%endif%}
+
+
+      <button class="button_profile" role="button"><a href="{%url 'conversation:new' user.id%}">Chat</a></button>
+      {%endif%}
+      <div class="wrapper__cards_tables">
+      {%for table in tables%}
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{table.name}}</h5>
+          
+          
+          
+          <a href="{%url 'table_detail' table.id %}" class="card-link">get in</a>
+          
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+    {%if followings.count > 1 %}
+    <h4 class="follow__title">Followed by:({{followings.count}})</h4>
+    <div class="carousel-following-wrapper">
+      
+      
+        {%for follow in followings %}
+        <div class="card following_card" style="margin-right: 30px;">
+          <img src="{{follow.follow_by.profile.ava.url}}" class="fluid-img follow_img" alt="ava {{follow}}">
+          <div class="card-body">
+           <a href="{%url 'profile' follow.follow_by.id%}"><h5 class="card-title follow_nick">{{follow.follow_by.profile.nickname}}</h5></a>
+            
+          </div>
+        </div>
+        
+        {%endfor%}
+        
+      
+    </div>
+    {%endif%}
+    
+</div>
+</div>
+</div>
+</div>
+
+<script src="{%static 'modealaddforms.js' %}"></script>
+
+
+{%endblock%}

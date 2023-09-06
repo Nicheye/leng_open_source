@@ -1,0 +1,505 @@
+{%extends 'base.html'%}
+{%block title%}About Us{%endblock%}
+{%block includings%}
+{%load static%}
+{%endblock%}
+
+
+<script src="https://kit.fontawesome.com/88b3967efd.js" crossorigin="anonymous"></script>
+
+{%block content%}
+
+<section class="about-start">
+    <div class="container">
+        <div class="about-start-textblock">
+        <div class="about-title">
+            The New Way to learn english
+        </div>
+        <div class="about-description">
+            We service the new level of efficiency in learning english
+            through self-dictionaries and connect with other people
+        </div>
+    </div>
+    </div>
+    <div id="bg-wrap" >
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" class="bg-wrap">
+        <defs>
+        <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5"><animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(255, 0, 255, 1)"></stop><stop offset="100%" stop-color="rgba(25, 0, 25, 0)"></stop></radialGradient>
+        <radialGradient id="Gradient2" cx="50%" cy="50%" fx="2.68147%" fy="50%" r=".5"><animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(255, 255, 0, 1)"></stop><stop offset="100%" stop-color="rgba(25, 55, 0, 0)"></stop></radialGradient>
+        <radialGradient id="Gradient3" cx="50%" cy="50%" fx="0.836536%" fy="50%" r=".5"><animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(0, 255, 255, 1)"></stop><stop offset="100%" stop-color="rgba(0, 25, 255, 0)"></stop></radialGradient>
+        <radialGradient id="Gradient4" cx="50%" cy="50%" fx="4.56417%" fy="50%" r=".5"><animate attributeName="fx" dur="23s" values="0%;5%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(0, 255, 0, 1)"></stop><stop offset="100%" stop-color="rgba(0, 98, 0, 0)"></stop></radialGradient>
+        <radialGradient id="Gradient5" cx="50%" cy="50%" fx="2.65405%" fy="50%" r=".5"><animate attributeName="fx" dur="24.5s" values="0%;5%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(0,0,255, 1)"></stop><stop offset="100%" stop-color="rgba(0,0,787, 0)"></stop></radialGradient>
+        <radialGradient id="Gradient6" cx="50%" cy="50%" fx="0.981338%" fy="50%" r=".5"><animate attributeName="fx" dur="25.5s" values="0%;5%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(255,0,0, 1)"></stop><stop offset="100%" stop-color="rgba(5,0,2, 0)"></stop></radialGradient>
+        </defs>
+        <!--<rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient4)">
+        <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+        <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient5)">
+        <animate attributeName="x" dur="23s" values="0%;-25%;0%" repeatCount="indefinite" />
+        <animate attributeName="y" dur="24s" values="25%;-25%;25%" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient6)">
+        <animate attributeName="x" dur="25s" values="-25%;0%;-25%" repeatCount="indefinite" />
+        <animate attributeName="y" dur="26s" values="0%;-25%;0%" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite"/>
+        </rect>-->
+        <rect x="13.744%" y="1.18473%" width="100%" height="100%" fill="url(#Gradient1)" transform="rotate(334.41 50 50)"><animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite"></animate><animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite"></animate><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="7s" repeatCount="indefinite"></animateTransform></rect>
+        <rect x="-2.17916%" y="35.4267%" width="100%" height="100%" fill="url(#Gradient2)" transform="rotate(255.072 50 50)"><animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite"></animate><animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite"></animate><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s" repeatCount="indefinite"></animateTransform>
+        </rect>
+        <rect x="9.00483%" y="14.5733%" width="100%" height="100%" fill="url(#Gradient3)" transform="rotate(139.903 50 50)"><animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite"></animate><animate attributeName="y" dur="12s" values="0%;25%;0%" repeatCount="indefinite"></animate><animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s" repeatCount="indefinite"></animateTransform>
+        </rect>
+        </svg>
+      </div>
+</section>
+<section class="functions">
+    <div class="container">
+    <div class="functions-wrapper">
+        <div class="functions-cards-wrapper">
+            <div class="function-card welcome">
+                <img src="{%static 'images/door.png' %}" alt="" class="function_img">
+                <div class="function-textblock">
+                    <div class="function-title">Welcome</div>
+                    <div class="function-descr">Welcome to Leng - the ultimate platform for competitive word games, real-time chat, leaderboards. Engage in thrilling game sessions where one user writes a word in English, and another user strives to guess it correctly. With Leng, you can challenge friends or meet new opponents from around the world to test your linguistic skills.</div>
+                </div>
+                
+            </div>
+
+            <div class="function-card dicts">
+                <img src="{%static 'images/dictionary.png' %}" class="function_img">
+                <div class="function-textblock">
+                    <div class="function-title">Not just dictionaries</div>
+                    <div class="function-descr">But Leng is more than just a dictionries. Our platform offers a dynamic chat feature, enabling users to interact with their opponents, discuss strategies, or simply connect with fellow word enthusiasts. Stay connected with a vibrant community of language lovers and enhance your gameplay experience.</div>
+                </div>
+                
+            </div>
+
+            <div class="function-card better">
+                <img src="{%static 'images/greenup.jpg' %}" alt="" class="function_img">
+                <div class="function-textblock">
+                    <div class="function-title">Get Better</div>
+                    <div class="function-descr">Track your progress and compare your performance against other players on our leaderboard. Earn bragging rights by climbing to the top and showcasing your mastery of the English language. Whether you're a casual player or a seasoned word aficionado, Leng provides the thrill of competition and the opportunity to continuously improve.</div>
+                </div>
+                
+            </div>
+
+            <div class="function-card join">
+                <img src="{%static 'images/logojumpin.gif' %}" alt="" class="function_img">
+                <div class="function-textblock">
+                    <div class="function-title">Join In</div>
+                    <div class="function-descr">Join Leng today and let the exciting word challenges, interactive chat, leaderboards, and translation capabilities create an immersive and thrilling gaming experience that transcends borders and celebrates the power of language.</div>
+                </div>
+                
+            </div>
+
+            <div class="function-card open_source">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github function_img" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              <div class="function-textblock">
+                  <div class="function-title">Open Source</div>
+                  <div class="function-descr">We want to improve quality of our service,so we let u check it out  > <a href="" style="color: #ff0000;">here</a></div>
+              </div>
+              
+          </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+$(document).ready(function() {
+    
+    
+  
+  $(".function-card.dicts").on( "mouseenter", function(){
+    
+    var p = $(".functions").css("background-color", "#fff567",
+    );
+    
+  } );
+  $(".function-card.welcome").on( "mouseenter", function(){
+    
+    var p = $(".functions").css("background-color", "#00B2A0",
+    );
+    
+  } );
+
+  $(".function-card.better").on( "mouseenter", function(){
+    
+    var p = $(".functions").css("background-color", "#316331",
+    );
+    
+  } );
+  $(".function-card.join").on( "mouseenter", function(){
+    
+    var p = $(".functions").css("background-color", "#1a436e",
+    );
+    
+  } );
+  $(".function-card").on( "mouseleave", function(){
+    var p = $(".functions").css("background-color", "black");
+  } ); 
+  
+});
+</script>
+</section>
+<div class="roadmap__title">Our Roadmap</div>
+<section class="roadmap">
+    
+    <div id="roadmap_cards">
+        <div class="roadmap_card">
+          <div class="roadmap_card-content">
+            <div class="roadmap_card-image">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="#fff" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+              </svg>
+            </div>
+            <div class="roadmap_card-info-wrapper">
+              <div class="roadmap_card-info">
+                
+                <div class="roadmap_card-info-title">
+                  <h3>Support Project</h3>  
+                  <h4>We are going to keep working on functional and visual parts of our site</h4>
+                </div>    
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="roadmap_card">
+            <div class="roadmap_card-content">
+              <div class="roadmap_card-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="90%" height="90%" fill="#fff" class="bi bi-translate" viewBox="0 0 16 16">
+                  <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                  <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+                </svg>
+              </div>
+              <div class="roadmap_card-info-wrapper">
+                <div class="roadmap_card-info">
+                  <i class="roadmap_fa-duotone fa-apartment"></i>
+                  <div class="roadmap_card-info-title">
+                    <h3>Adaptation on different languages</h3>  
+                    <h4>We want to reach as much accesesebility as possible</h4>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap_card">
+            <div class="roadmap_card-content">
+              <div class="roadmap_card-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="90%" height="90%" fill="crimson" class="bi bi-phone" viewBox="0 0 16 16">
+                  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                </svg>
+              </div>
+              <div class="roadmap_card-info-wrapper">
+                <div class="roadmap_card-info">
+                  <i class="roadmap_fa-duotone fa-apartment"></i>
+                  <div class="roadmap_card-info-title">
+                    <h3>Mobile App</h3>  
+                    <h4>Another key to accesesebility is mobile devices</h4>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap_card">
+            <div class="roadmap_card-content">
+              <div class="roadmap_card-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="green" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                </svg>
+              </div>
+              <div class="roadmap_card-info-wrapper">
+                <div class="roadmap_card-info">
+                  <i class="roadmap_fa-duotone fa-apartment"></i>
+                  <div class="roadmap_card-info-title">
+                    <h3>Premium content</h3>  
+                    <h4>We want to let supporters of project be able to look custom and authentic</h4>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="roadmap_card">
+            <div class="roadmap_card-content">
+              <div class="roadmap_card-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="#fafafa" class="bi bi-card-heading" viewBox="0 0 16 16">
+                  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                  <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z"/>
+                </svg>
+              </div>
+              <div class="roadmap_card-info-wrapper">
+                <div class="roadmap_card-info">
+                  <i class="roadmap_fa-duotone fa-apartment"></i>
+                  <div class="roadmap_card-info-title">
+                    <h3>Add In-built Blogs</h3>  
+                    <h4>We want to let people share their thought on our project and let them share their ways to learn english</h4>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+          <div class="roadmap_card">
+            <div class="roadmap_card-content">
+              <div class="roadmap_card-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="blue" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
+                  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                </svg>
+              </div>
+              <div class="roadmap_card-info-wrapper">
+                <div class="roadmap_card-info">
+                  <i class="roadmap_fa-duotone fa-apartment"></i>
+                  <div class="roadmap_card-info-title">
+                    <h3>English Courses</h3>  
+                    <h4>We want add some basic english courses for complete beginners in english</h4>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap_card">
+            <div class="roadmap_card-content">
+              <div class="roadmap_card-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="#00B2A0" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                </svg>
+              </div>
+              <div class="roadmap_card-info-wrapper">
+                <div class="roadmap_card-info">
+                  <i class="roadmap_fa-duotone fa-apartment"></i>
+                  <div class="roadmap_card-info-title">
+                    <h3>Partnership</h3>  
+                    <h4>We want to sign a partnership with some english schools</h4>
+                  </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+      <script>
+        document.getElementById("roadmap_cards").onmousemove = e => {
+  for(const card of document.getElementsByClassName("roadmap_card")) {
+    const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+}
+      </script>
+</section>
+
+<section class="left-right">
+    <div class="container">
+      <div class="left-right-main-title">Our Functions</div>
+    <div class="left-right-card">
+        <div class="left">
+            <div class="left-right-title">Users and Ladder</div>
+            <div class="left-right-description">Leng displays a leaderboard that showcases the top-performing players, adding a sense of competition and achievement. Users have the option to create personalized profiles, allowing them to showcase their achievements.</div>
+        </div>
+
+        <div class="right">
+            <img src="{%static 'images/usersandleaderboardimg.jpg' %}" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <div class="left-right-card guess">
+        <div class="left">
+            <img src="{%static 'images/guessgameart.jpg' %}" class="img-fluid guess_img" alt="">
+            
+        </div>
+
+        <div class="right">
+            <div class="left-right-title">Guess Game</div>
+            <div class="left-right-description">Leng provides various multiplayer games, ensuring there is always a new and exciting challenge for users to enjoy.</div>
+        </div>
+    </div>
+
+    <div class="left-right-card chat">
+        <div class="hero">
+
+            <div class="snow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice">
+                    <g fill="#FFF" fill-opacity=".15" transform="translate(55 42)">
+                       <g id="snow-bottom-layer">
+                          <ellipse cx="6" cy="1009.5" rx="6" ry="5.5"/>
+                          <ellipse cx="138" cy="1110.5" rx="6" ry="5.5"/>
+                          <ellipse cx="398" cy="1055.5" rx="6" ry="5.5"/>
+                          <ellipse cx="719" cy="1284.5" rx="6" ry="5.5"/>
+                          <ellipse cx="760" cy="1155.5" rx="6" ry="5.5"/>
+                          <ellipse cx="635" cy="1459.5" rx="6" ry="5.5"/>
+                          <ellipse cx="478" cy="1335.5" rx="6" ry="5.5"/>
+                          <ellipse cx="322" cy="1414.5" rx="6" ry="5.5"/>
+                          <ellipse cx="247" cy="1234.5" rx="6" ry="5.5"/>
+                          <ellipse cx="154" cy="1425.5" rx="6" ry="5.5"/>
+                          <ellipse cx="731" cy="773.5" rx="6" ry="5.5"/>
+                          <ellipse cx="599" cy="874.5" rx="6" ry="5.5"/>
+                          <ellipse cx="339" cy="819.5" rx="6" ry="5.5"/>
+                          <ellipse cx="239" cy="1004.5" rx="6" ry="5.5"/>
+                          <ellipse cx="113" cy="863.5" rx="6" ry="5.5"/>
+                          <ellipse cx="102" cy="1223.5" rx="6" ry="5.5"/>
+                          <ellipse cx="395" cy="1155.5" rx="6" ry="5.5"/>
+                          <ellipse cx="826" cy="943.5" rx="6" ry="5.5"/>
+                          <ellipse cx="626" cy="1054.5" rx="6" ry="5.5"/>
+                          <ellipse cx="887" cy="1366.5" rx="6" ry="5.5"/>
+                          <ellipse cx="6" cy="241.5" rx="6" ry="5.5"/>
+                          <ellipse cx="138" cy="342.5" rx="6" ry="5.5"/>
+                          <ellipse cx="398" cy="287.5" rx="6" ry="5.5"/>
+                          <ellipse cx="719" cy="516.5" rx="6" ry="5.5"/>
+                          <ellipse cx="760" cy="387.5" rx="6" ry="5.5"/>
+                          <ellipse cx="635" cy="691.5" rx="6" ry="5.5"/>
+                          <ellipse cx="478" cy="567.5" rx="6" ry="5.5"/>
+                          <ellipse cx="322" cy="646.5" rx="6" ry="5.5"/>
+                          <ellipse cx="247" cy="466.5" rx="6" ry="5.5"/>
+                          <ellipse cx="154" cy="657.5" rx="6" ry="5.5"/>
+                          <ellipse cx="731" cy="5.5" rx="6" ry="5.5"/>
+                          <ellipse cx="599" cy="106.5" rx="6" ry="5.5"/>
+                          <ellipse cx="339" cy="51.5" rx="6" ry="5.5"/>
+                          <ellipse cx="239" cy="236.5" rx="6" ry="5.5"/>
+                          <ellipse cx="113" cy="95.5" rx="6" ry="5.5"/>
+                          <ellipse cx="102" cy="455.5" rx="6" ry="5.5"/>
+                          <ellipse cx="395" cy="387.5" rx="6" ry="5.5"/>
+                          <ellipse cx="826" cy="175.5" rx="6" ry="5.5"/>
+                          <ellipse cx="626" cy="286.5" rx="6" ry="5.5"/>
+                          <ellipse cx="887" cy="598.5" rx="6" ry="5.5"/>
+                       </g>
+                    </g>
+                    <g fill="#FFF" fill-opacity=".3" transform="translate(65 63)">
+                       <g id="snow-top-layer">
+                          <circle cx="8" cy="776" r="8"/>
+                          <circle cx="189" cy="925" r="8"/>
+                          <circle cx="548" cy="844" r="8"/>
+                          <circle cx="685" cy="1115" r="8"/>
+                          <circle cx="858" cy="909" r="8"/>
+                          <circle cx="874" cy="1438" r="8" transform="rotate(180 874 1438)"/>
+                          <circle cx="657" cy="1256" r="8" transform="rotate(180 657 1256)"/>
+                          <circle cx="443" cy="1372" r="8" transform="rotate(180 443 1372)"/>
+                          <circle cx="339" cy="1107" r="8" transform="rotate(180 339 1107)"/>
+                          <circle cx="24" cy="1305" r="8" transform="rotate(180 24 1305)"/>
+                          <circle cx="8" cy="8" r="8"/>
+                          <circle cx="189" cy="157" r="8"/>
+                          <circle cx="548" cy="76" r="8"/>
+                          <circle cx="685" cy="347" r="8"/>
+                          <circle cx="858" cy="141" r="8"/>
+                          <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)"/>
+                          <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)"/>
+                          <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)"/>
+                          <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)"/>
+                          <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)"/>
+                       </g>
+                    </g>
+                </svg>
+            </div>
+            
+            <div class="left">
+                <div class="left-right-title">Chat Feature</div>
+                <div class="left-right-description">Users can communicate and interact with each other through a chat feature, fostering a sense of community.</div>
+            </div>
+    
+            <div class="right">
+                <img src="{%static 'images/chatfeauture.jpg' %}" class="img-fluid" alt="">
+            </div>
+        
+        </div>
+        
+    </div>
+</div>
+</section>
+
+
+<section class="feedback">
+  <div class="container">
+  <div class="feedback-title">Leave Feedback</div>
+
+  <form action="" class="feedback-form" method="POST">
+    {%csrf_token%}
+    <input type="text" class="feedback_input" placeholder="name" id="name__feedback">
+    <input type="tel" class="feedback_input" placeholder="phone" id="phone__feedback">
+    <textarea name="" id="" class="feedback_input feedback_area" placeholder="your message" id="message__feedback"></textarea>
+
+    <button class="feedback-btn">Send</button>
+  </form>
+</div>
+</section>
+
+<section class="support">
+  <div class="container">
+  <div class="sup-left">
+    <div class="sup-left-title">Support us <i class="fa-solid fa-handshake-angle" style="color: #ffffff;"></i></div>
+    <div class="sup-credential">
+      
+      <div class="card" style="width: 18rem;background-color: cadetblue; border: none; color: #fff;">
+        <img src="{%static 'images/btcqr.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: 700;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
+            <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25L5.5 13zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28V4.487zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927V8.539z"/>
+          </svg> Btc</h5>
+          <p class="card-text">bc1qn4w2yne05swagksjg5xppefryj0j2ffcdv9d4m</p>
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="sup-credential">
+
+      <div class="card" style="width: 18rem;background-color: cadetblue; border: none;color: #fff;">
+        <img src="{%static 'images/ethqr.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: 700;"> <i class="fa-brands fa-ethereum"></i> Eth</h5>
+          <p class="card-text">0x63ECC01BbcAffaea297b0797b594fAFc437Fb4e7</p>
+          
+        </div>
+      </div>
+     
+      
+    </div>
+
+
+    <div class="sup-credential">
+
+      <div class="card" style="width: 18rem;background-color: cadetblue; border: none;color: #fff;">
+        <img src="{%static 'images/usdtqr.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+           <span style="font-weight: 700;">usdt</span> </h5>
+          <p class="card-text">0x63ECC01BbcAffaea297
+            b0797b594fAFc437Fb4e7</p>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+
+  </div>
+  <div class="sup-right">
+    <div class="sup-right-title">Developers <i class="fa-solid fa-code" style="color: #ffffff;"></i></div>
+      <div class="developer-credential">Michael Shpilevsky</div>
+      <div class="developer-credential"><a href="https://github.com/Nicheye"><i class="fa-brands fa-github-alt" style="color: #ffffff; margin-right: 10px;"></i>github</a></div>
+      <div class="developer-credential"><a href="https://nicheye.github.io/MichaelShpilevsky.io/"><i class="fa-solid fa-globe" style="color: #ffffff; margin-right: 10px;"></i>website</a></div>
+      <div class="developer-credential"><a href="https://www.youtube.com/@WebDawg-ow7yf"><i class="fa-brands fa-youtube" style="color: #ff0000;margin-right: 10px;"></i>youtube</a></div>
+      
+  </div>
+</div>
+</section>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<script>
+ScrollReveal().reveal('.about-start .container');
+ScrollReveal().reveal('.functions-wrapper', { delay: 500 });
+ScrollReveal().reveal('#roadmap_cards', { delay: 300 });
+ScrollReveal().reveal('.left-right .container', { delay: 300 });
+ScrollReveal().reveal('.feedback .container', { delay: 300 });
+ScrollReveal().reveal('.support .container', { delay: 300 });
+</script>
+{%endblock%}

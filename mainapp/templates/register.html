@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{%block includings%}
+{%load static%}
+
+<link rel="stylesheet" href="{%static 'signup.css'%}">
+{%endblock%}
+{%block title%}register{%endblock%}
+{% block content %}
+
+<!--
+<div class="col-md-6 offset-md-3">
+<h1>Register</h1>
+<br/>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	{% if form.errors %}
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			  Your Form Has Errors
+			  {% for field in form %}
+			  	{% if field.errors %}
+			  		{{ field.errors }}
+			  	{% endif %}
+			  {% endfor %}
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endif %}
+
+	{{ form.as_p }}
+
+	<br/>
+	  <button type="submit" class="btn btn-secondary">Register</button>
+	</form>
+
+
+
+</div>
+-->
+
+<div class="split-screen">
+	
+	<div class="left">
+		<section class="copy">
+			<h1>Learn and compete in English</h1>
+			<p>become fluent in english</p>
+		</section>
+	</div>
+	<div class="right">
+		<form  method="POST">
+			{% csrf_token %}
+			{% if form.errors %}
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			  Your Form Has Errors
+			  {% for field in form %}
+			  	{% if field.errors %}
+			  		{{ field.errors }}
+			  	{% endif %}
+			  {% endfor %}
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endif %}
+			<section class="copy">
+				<h2>Sign up</h2>
+				<div class="login-container">
+					<p>Already have an acoount?<a href="{%url 'login'%}"> <strong>Log in</strong></a></p>
+				</div>
+			</section>
+				<div class="input-container name">
+					<label for="fname">Username</label>
+					{{form.username}}
+					
+				</div>
+				<div class="input-container email">
+					<label for="email">Email</label>
+					{{form.email}}
+				</div>
+				<div class="input-container password">
+					<label for="password">password</label>
+					{{form.password1}}
+				</div>
+				<div class="input-container password">
+					<label for="password"></label>
+					{{form.password2}}
+				</div>
+				<button class="signup-btn" type="submit">Sign up</button>
+				
+		</form>
+	</div>
+</div>
+
+{% endblock %}

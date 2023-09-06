@@ -1,0 +1,243 @@
+{%extends 'base.html'%}
+{%block includings%}
+{% load static %}
+<link rel="stylesheet" href="{%static 'profile.css'%}">
+{%endblock%}
+{%block title%}Game {{round.round_number}}{%endblock%}
+
+
+{%block content%}
+<div class="game_detail__screen">
+{%if conversation.is_finished == False%}
+<div class="container">
+<section style="padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px;">
+  <div class="round__timer__wrapper">
+  <h1 style="margin-right: 30px;"> Round:{{round.round_number}} </h1>
+  <div class=""   id="js_timer">
+    <div class="" id="timer" style="font-size: 30px;">
+     
+    </div>
+  </div>
+</div>
+<div class="text-game-wrapper" >
+  
+  <br/>
+{%for scor in score%}
+<div class="score" style="display: block;">
+<h1 style="text-align: center;" class="score-user">{{scor.user}}
+
+</h1>
+<h2  class="score-score">{{scor.score}}</h2>
+</div>
+{%endfor%}
+
+</div>
+
+<script>
+  
+  $(document).ready(function(){
+    setInterval(function(){
+      $.ajax({
+        type:"GET",
+        url:"{%url 'game:get_count_msg' conversation.id%}",
+        success:function(response){
+          if(response.round_num_get>{{round.round_number}}){
+            location.href = "{%url 'game:detail_game' conversation.id%}";
+          }
+          
+        },
+        error: function(response){
+          alert("An Error Occured")
+        }
+      });
+    },1000);
+  });
+  // window.setTimeout(function(){
+    
+  // },5000);
+</script>
+
+
+<!--
+<div class="">
+    {%for message in conversation.game_messages.all%}
+    <div class="card mb-3 " style="max-width: 100%; background-color: #F1F4F5; border-radius: 0px; border:  .1rem solid black;" >
+        <div>
+            <p><strong>{{message.created_by.username}}</strong> @ {{message.created_at}}</p>
+            <p>{{message.wordineng}}</p>
+        </div>
+          
+        </div>
+      </div>
+    
+
+    {%endfor%}
+    -->
+</section >
+</div>
+<div class="container">
+  <table class="styled-table">
+      <thead>
+          <tr>
+              <th>Woid in eng</th>
+              <th>Word</th>
+          </tr>
+      </thead>
+      <tbody>
+          {%for message in conversation.game_messages.all%}
+          <tr>
+              
+              <!--<td><a href="{%url 'profile' user.id%}">{{user}}</a></td>-->
+
+              <td>{{message.wordineng}}</td>
+              {%if message.solved == True%}
+              <td>{{message.word}} <i class="fa-solid fa-check" style="color: green;"></i></td>
+              
+              {%endif%}
+              {%if request.user == round.current_player%}
+              {%if request.user == round.guesser_player%}
+
+              {%if message.created_by != request.user%}
+              
+              
+              {%if message.solved == False%}
+              <form action="{%url 'game:tester' conversation.id  message.id%}" method="POST">
+                {%csrf_token%}
+                
+                <td class="tester__td" ><input class="form-control" type="text" placeholder="Enter translate" name="form-guess" aria-label="default input example">
+                  <button type="submit" class="send__or__skip__btn">send</button>
+                </td>
+                
+              
+              </form>
+              {%else%}
+              
+              {%endif%}
+              
+            {%endif%}
+            {%endif%}
+            
+            
+              {%endif%}
+              {%if request.user == message.created_by and message.solved == False%}
+              <td>{{message.word}}</td>
+              {%endif%}
+
+
+          </tr>
+          {%endfor%}
+          
+          <!-- and so on... -->
+      </tbody>
+  </table>
+  
+</div>
+<section style="padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px;" >
+  <div class="container">
+  {%if request.user == round.current_player%}
+  {%if request.user == writer%}
+  <form method="post" action=".">
+
+    {%csrf_token%}
+    {{form.as_p}}
+    <button class="btn game__send__btn  ">Send</button>
+</form>
+{%else%}
+wait for other player turn 
+{%endif%}
+
+{%endif%}
+{%if request.user == round.current_player%}
+{%if request.user == round.guesser_player%}
+<button class="send__or__skip__btn"><a href="{% url 'game:skip' conversation.id round.id%}">skip</a></button>
+{%endif%}
+{%endif%}
+</div>
+</section>
+
+<script>
+  
+</script>
+{%else%}
+<div class="winner-screen">
+<div class="container">
+{%if score_1 > score_2%}
+<h1 class="winner__title"><span>Winner</span>:{{writer}}</h1>
+{%else%}
+<h1 class="winner__title"><span>Winner</span>:{{guesser}}</h1>
+{%endif%}
+{%if request.user == writer%}
+<button class="button-33 winner__btn" role="button"><a href="{%url 'game:new_game' guesser.id%}">Once more?</a></button>
+{%else%}
+<button class="button-33 winner__btn" role="button"><a href="{%url 'game:new_game' writer.id%}">Once more?</a></button>
+{%endif%}
+<button class="button-33 winner__btn" role="button"><a href="{%url 'main' %}">Quit</a></button>
+</div>
+<div class="container">
+  <table class="styled-table">
+      <thead>
+          <tr>
+              <th>Woid in eng</th>
+              <th>Word</th>
+          </tr>
+      </thead>
+      <tbody>
+          {%for message in conversation.game_messages.all%}
+          <tr>
+              
+              <!--<td><a href="{%url 'profile' user.id%}">{{user}}</a></td>-->
+
+              <td>{{message.wordineng}}</td>
+              <!--если ты отгадал-->
+              {%if message.solved == True and message.created_by != request.user%}
+              <td>{{message.word}} <i class="fa-solid fa-check" style="color: green;"></i></td>
+              <!--если ты создал слово и его не решили-->
+              {%elif message.solved == False and request.user == message.created_by %}
+              <td>{{message.word}}</td>
+              <!--если ты создал слово и его решили-->
+              {%elif message.solved == True and message.created_by == request.user %}
+              <td>{{message.word}} <sup style="font-size: 14px;">{%if request.user == writer%}{{guesser}} {%else%}{{writer}}{%endif%}</sup></td>
+              
+              {%else%}
+              <!--в других случая-->
+              <td>{{message.word}} <i class="fa-solid fa-xmark" style="color: red;"></i></td>
+              {%endif%}
+              
+
+
+          </tr>
+          {%endfor%}
+          
+          <!-- and so on... -->
+      </tbody>
+  </table>
+  <table class="styled-table">
+    <thead>
+        <tr>
+            <th>user</th>
+            <th>points</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for user in score%}
+        <tr>
+            
+            <!--<td><a href="{%url 'profile' user.id%}">{{user}}</a></td>-->
+
+            <td>{{user.user}}</td>
+            <td>{{user.score}}</td>
+            
+
+
+        </tr>
+        {%endfor%}
+        
+        <!-- and so on... -->
+    </tbody>
+</table>
+
+</div>
+</div>
+{%endif%}
+</div>
+{%endblock%}

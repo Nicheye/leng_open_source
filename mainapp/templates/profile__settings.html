@@ -1,0 +1,85 @@
+{%extends 'base.html'%}
+{%block includings%}
+{%load static%}
+{%endblock%}
+{%block title%}{{user}} settings{%endblock%}
+{%block content%}
+<section class="profile_settings_section">
+<div class="profile_detail-container">
+    <div class="profile_detail__title">
+        <h4>Change Profile</h4>
+    </div>
+    <img class="img-fluid user_ava profile__settings__ava" src="{{user.profile.ava.url}}" alt="">
+    
+    <div class="profile_detail-wrapper">
+        
+        <div class="profile_detail__title" style="margin-top: 2px;margin-bottom: 4px;">
+            <h6>Change Avatar</h4>
+        </div>
+        <form action="{%url 'change_ava' user.id%}" method="POST" class="avatar__change__form" enctype="multipart/form-data">
+            
+            {%csrf_token%}
+            <label for="images" class="drop-container" id="dropcontainer">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input class="profile_detail-input ava__input" name="avatar_photo" id="images" accept="image/*" type="file" required>
+                <button type="submit" class="change_ava_btn">send</button>
+              </label>
+        </form>
+        
+        <div class="profile_detail__title" style="margin-top: 2px;margin-bottom: 4px;">
+            <h6>Change Nickname</h4>
+        </div>
+        <form action="{%url 'change_nick' user.id%}" method="POST" class="nick_detail_profile__form">
+            {%csrf_token%}
+            <input type="text" class="form-control" id="floatingInputDisabled" placeholder="{{user}}" disabled>
+            <input class="profile_detail-input nickname__input" type="text" name="nickname" placeholder="{{user.profile.nickname}}" required>
+            <button type="submit" class="send__profile__settings_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg></button>
+        </form>
+
+        
+        <div class="profile_detail__title" style="margin-top: 2px;margin-bottom: 4px;">
+            <h6>Change Password</h4>
+        </div>
+        <form action="{%url 'change_password' user.id%}" method="POST" class="password_detail_profile__form">
+            {%csrf_token%}
+            <input type="text" class="profile_detail-input password__input" name="old_password" placeholder="old password">
+            <input class="profile_detail-input password__input" type="password" name="new_password" placeholder="new password" required>
+            <button class="send__profile__settings_btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg></button>
+            
+        </form>
+    </div>
+</div>
+</section>
+<script >
+    const dropContainer = document.getElementById("dropcontainer")
+const fileInput = document.getElementById("images")
+
+dropContainer.addEventListener("dragover", (e) => {
+  // prevent default to allow drop
+  e.preventDefault()
+}, false)
+
+dropContainer.addEventListener("dragenter", () => {
+  dropContainer.classList.add("drag-active")
+})
+
+dropContainer.addEventListener("dragleave", () => {
+  dropContainer.classList.remove("drag-active")
+})
+
+dropContainer.addEventListener("drop", (e) => {
+  e.preventDefault()
+  dropContainer.classList.remove("drag-active")
+  fileInput.files = e.dataTransfer.files
+})
+
+
+</script>
+{%endblock%}

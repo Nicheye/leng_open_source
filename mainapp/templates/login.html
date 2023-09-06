@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+{%block includings%}
+{%load static%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{%static 'signup.css'%}">
+{%endblock%}
+{%block title%}login{%endblock%}
+{%block content%}
+
+
+    
+    
+    
+        
+        
+
+
+          <div class="split-screen">
+            <div class="left">
+                <section class="copy">
+                    <h1>Learn and compete in English</h1>
+                    <p>become fluent in english</p>
+                </section>
+            </div>
+            <div class="right">
+                <form action="{%url 'login'%}" method="POST">
+                  {%csrf_token%}
+                        {%if messages%}
+              
+              {%for message in messages%}
+              
+              <div class="alert alert-warning" role="alert">
+                  {{message}}
+                  <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+                
+              {%endfor%}
+              {%endif%}
+                    <section class="copy">
+                        <h2>Login</h2>
+                        <div class="login-container">
+                            <p>Dont have an account?<a href="{%url 'register'%}"> <strong>Register</strong></a></p>
+                        </div>
+                    </section>
+                        <div class="input-container name">
+                            <label for="fname">Username</label>
+                            <input type="text" name="username" id="fname" placeholder="enter here">
+                        </div>
+                        
+                        <div class="input-container password">
+                            <label for="password">password</label>
+                            <input type="password" name="password" id="password" placeholder="Must be at least 6 characters">
+                            <!-- <i class="far fa-eye-slash"></i> -->
+                        </div>
+                        <button class="signup-btn" type="submit">Log in</button>
+                        {%load socialaccount %}
+                    
+                        <a href="{%provider_login_url 'google' %}?next=/" class="google-link"><i class="bi bi-google" style="margin-right: 5px;"></i> Continue With Google </a>
+                </form>
+            </div>
+        </div>
+   
+   
+
+
+{%endblock%}

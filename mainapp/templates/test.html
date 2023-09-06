@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block includings%}
+{%load static%}
+
+
+
+
+{%endblock%}
+{%block content%}
+<div class="container">
+<h2 class="tester__title">{{word.wordineng}}</h2>
+{%if message%}
+{%if message == "good job" %}
+<h2 class="tester__title green__gradient" style="margin-top: 10px;">{{message}}</h2>
+{%endif%}
+{%if message == "a bit wrong" %}
+
+<h2 class="tester__title red__gradient" style="margin-top: 10px;">{{message}}</h2>
+
+{%endif%}
+{%endif%}
+<div class="test-input-wrapper">
+<form action="" method="POST">
+    {%csrf_token%}
+   <input class="form-control" type="text" placeholder="Enter translate" name="form-test" aria-label="default input example" required>
+      <button type="submit" class="send__or__skip__btn">send</button>
+  </form>
+</div>
+</div>
+{%endblock%}

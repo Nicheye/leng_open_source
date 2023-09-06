@@ -1,0 +1,75 @@
+
+{%extends 'base.html'%}
+{%block includings%}
+{%load static%}
+
+
+
+
+{%endblock%}
+{%block title%}table detail{%endblock%}
+{%block content%}
+<div class="table-detail-screen">
+<div class="container">
+  
+    {%if request.user == user%}
+    <div id="demo-modal" class="modal" role="dialog" tabindex="-1">
+        <div class="model-inner">
+          <div class="modal-header">
+            <h3>Write new translation</h3>
+            <button class="modal-close" data-id="demo-modal" aria-label="Close">
+              &times;
+            </button>
+          </div>
+          <form action="" method="POST">
+            {%csrf_token%}
+            <div class="mb-3">
+                <div class="input-wrapper">
+                {{form.word}}
+                {{form.wordineng}}
+            </div>
+              </div>
+            <button class="modal-open-add" type="submit">send</button>
+          </form>
+        
+       
+        
+        
+        </div>
+      </div>
+      <!-- <button class="modal-open table_detail_btn"   data-id="demo-modal">ADD</button> -->
+      <button class="modal-open table_detail_btn" style="margin-top: 30px;"  data-id="demo-modal">ADD</button>
+    {%endif%}
+    <div class="table_add_wrapper">
+      
+    
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Local</th>
+                <th>Eng  </th>
+                
+            </tr>
+            
+        </thead>
+        <tbody>
+            {%for word in words%}
+            <tr>
+                
+                <td>{{word.word}}</td>
+                <td>{{word.wordineng}}</td>
+                
+            </tr>
+            {%endfor%}
+            
+            <!-- and so on... -->
+        </tbody>
+    </table>
+    
+  </div>
+</div>
+
+
+</div>
+<script src="{%static 'modealaddforms2.js' %}"></script>
+{%endblock%}

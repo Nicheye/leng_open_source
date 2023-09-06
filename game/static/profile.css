@@ -1,0 +1,255 @@
+/*base*/
+.container{
+    
+    max-width: 1190px;
+    padding: 0 10px;
+    margin:1% auto;
+    
+}
+
+.title_profile{
+    font-size: 48px;
+    color: #242121;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: -1.65px;
+    font-family: 'Ubuntu', sans-serif;
+    padding-bottom: 18px;
+    align-self: flex-start;
+    
+    transition: all .4s;
+    
+    
+}
+.title_profile:hover{
+    color: #1a436e;
+}
+
+.profile__numbers-item{
+    margin-bottom: 9px;
+    color: #242121;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    line-height: 73px;
+    margin-bottom: 9px;
+}
+.profile__numbers-item span{
+    
+    color: #333;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    display: block;
+    
+}
+/*modal*/
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .modal[open] {
+    display: flex;
+  }
+  .model-inner {
+    background-color: white;
+    border-radius: 0.5em;
+    max-width: 600px;
+    padding: 2em;
+    margin: auto;
+  }
+  .modal-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    
+  }
+  #modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: black;
+    opacity: 0.5;  
+  }
+.modal-close{
+    
+    top: 0;
+    right: 0;
+    color: rgb(105, 2, 2);
+    font-size: 36px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+}
+  /*open-btn modal*/
+.modal-open{
+    background-color: #000;
+
+  border: 0;
+  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  min-height: 56px;
+  min-width: 120px;
+  padding: 16px 20px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all .2s cubic-bezier(.22, .61, .36, 1);
+  
+    
+}
+.modal-open:hover {
+    background-color: #0a6bff;
+    transform: translateY(-2px);
+  }
+  
+  @media (min-width: 768px) {
+    .modal-open {
+      padding: 16px 44px;
+      min-width: 150px;
+    }
+  }
+
+  /*send-btn modal*/
+  .modal-open-add{
+    background-color: #000;
+
+  border: 0;
+  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  min-height: 34px;
+  min-width: 100%;
+  padding: 16px 20px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all .2s cubic-bezier(.22, .61, .36, 1);
+  margin-top: 20px;
+    
+    
+}
+.modal-open-add:hover {
+    background-color: #0a6bff;
+    transform: translateY(-2px);
+  }
+  
+  @media (min-width: 768px) {
+    .modal-open-add {
+      padding: 16px 44px;
+      min-width: 150px;
+    }
+  }
+
+/*table*/
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+/*wrapper for tables cards in profile*/
+.wrapper__cards_tables{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+.card{
+    width: 18rem;
+    margin: 10px;
+    border: 2px solid #000;
+    padding: 10px;
+    transition:all  .3s ease-in-out ;
+}
+.card:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width:630px) {
+    .wrapper__cards_tables{
+        flex-direction: column;
+    }
+    .card{
+        
+        width: 95%;
+       
+    }
+    
+}
+/*wrapper input table */
+.input-wrapper{
+    display: flex;
+    margin-right: 10px;
+}
+.input-wrapper .form-control{
+    margin-left: 10px;
+}
+@media (max-width:500px) {
+  .table_detail_btn  {
+    position: fixed ; 
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+    }
+}
+.text-game-wrapper{
+  display: flex;
+}

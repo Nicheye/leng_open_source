@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+{%block includings%}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'profile.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+{%endblock%}
+{%block title%}Conversation{%endblock%}
+
+
+{%block content%}
+<div class="chat__screen">
+<div class="container">
+<section style="padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px;">
+<h1>Conversation</h1>
+
+<div class="cardd  inboxes__games__card chat__conver">
+    {%for message in conversation.messages.all%}
+    <div class="card inboxes__games__card message__chat" >
+        <div>
+            <p><strong>{{message.created_by.username}}</strong> @ {{message.created_at}}</p>
+            <p>{{message.content}}</p>
+        </div>
+          
+        </div>
+      
+    
+
+    {%endfor%}
+</div>
+</section >
+
+<section style="padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px;" >
+<form method="post" action=".">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button class="btn btn-outline-success">Send</button>
+</form>
+</section>
+<!-- <div >
+  <ul class="content-data" id="content-data"></ul>
+</div> -->
+<script>
+  $(document).ready(function(){
+    setInterval(function(){
+      location.reload();
+    },10000);
+    });
+</script>
+<!-- <script>
+  $(document).ready(function(){
+    setInterval(function(){
+      $.ajax({
+        type:'GET',
+        url:'{%url "conversation:detail_ajax" conversation.id%}',
+        
+        
+        success:function(response){
+          $("#content-data").empty();
+          for (var key in response){
+            var temp = "<li>"+key.content+"</li>"
+            $("#content-data").append(temp);
+          }
+
+        },
+        error:function(response){
+          alert("something went wrong");
+        }
+      });
+    },1000);
+  });
+</script> -->
+</div>
+</div>
+{%endblock%}

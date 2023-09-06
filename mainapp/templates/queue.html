@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%block includings%}
+{%load static%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+
+
+{%endblock%}
+{%block title%}queue{%endblock%}
+{%block content%}
+<section class="queue__screen">
+<div class="container">
+    
+<h1 class="queue__title green__gradient">Wait,while we are looking for partner for u</h1>
+<div class="spinner-border" style="color: #0c005e;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    setInterval(function(){
+      $.ajax({
+        type:'GET',
+        url:"{%url 'live_games_counter' request.user.id%}",
+        success: function(response){
+          if (response.live_games_counter>{{count}})
+          {
+            
+              location.href = 'http://127.0.0.1:8000/game/' +response.last_game+"/";
+            
+          }
+        },
+        error:function(response){
+          alert("error")
+        }
+      
+      })
+    })
+  },5000);
+</script>
+{%endblock%} 
